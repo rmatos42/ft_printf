@@ -2,8 +2,7 @@
 
 int		main(int argc, char **argv)
 {
-	int ft = ft_printf("%c\n", 0);
-	int gcc = printf("%c\n", 0);
+	ft_printf("%s\n", "Ly");
+	ft_printf("Lalalala, %d%% des gens qui parlent %C Ly adorent %s. Ou Presque. %d, %u, %X, %c", 100, L'à', "Ly", 2, 10, 10000, '\n', "ôHohoho");
 
-	printf("%i:%i\n", ft, gcc);
 }
