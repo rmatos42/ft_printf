@@ -5,6 +5,8 @@ t_ret	print_str(va_list	args, t_mod mod)
 	t_ret	ret;
 
 	ret.str = va_arg(args, char*);
+	if (ret.str == 0)
+		ret.str = "(null)";
 	prec_str(&ret.str, mod.prec);
 	just_str(&ret.str, mod.just, ' ', (mod.just < 0) ? 0 : 1);
 	ret.len = ft_strlen(ret.str);
@@ -262,7 +264,7 @@ t_ret	print_hexup(va_list	args, t_mod mod)
 t_ret	print_char(va_list	args, t_mod mod)
 {
 	t_ret	ret;
-	wchar_t	c;
+	char	c;
 
 	if (mod.l)
 		c = va_arg(args, wchar_t);
@@ -273,7 +275,7 @@ t_ret	print_char(va_list	args, t_mod mod)
 	ret.str[1] = '\0';
 	just_str(&ret.str, mod.just, ' ', (mod.just < 0) ? 0 : 1);
 	ret.len = ft_strlen(ret.str);
-	if (c == '\0')
+	if (!ret.str[0])
 		ret.len++;
 	return (ret);
 }
