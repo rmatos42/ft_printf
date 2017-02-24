@@ -282,8 +282,8 @@ t_ret	print_wchar(va_list	args, t_mod mod)
 {
 	t_ret ret;
 
-	ret.str = "str";
-	ret.len = 3;
+	ret.str = "�";
+	ret.len = 1;
 	return (ret);
 }
 
