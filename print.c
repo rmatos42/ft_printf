@@ -111,7 +111,7 @@ t_ret	print_oct(va_list	args, t_mod mod)
 {
 	t_ret		ret;
 	int			neg;
-	long long	nb;
+	unsigned long long	nb;
 
 	if (mod.hh)
 		nb = va_arg(args, unsigned int);
@@ -124,10 +124,10 @@ t_ret	print_oct(va_list	args, t_mod mod)
 	else if (mod.j)
 		nb = va_arg(args, uintmax_t);
 	else if (mod.z)
-		nb = va_arg(args, size_t);
+		nb = va_arg(args, unsigned long long);
 	else
 		nb = va_arg(args, unsigned int);
-	ret.str = ft_ltoa_base(nb, 8, 0);
+	ret.str = ft_ultoa_base(nb, 8, 0);
 	prec_int(&ret.str, mod.prec);
 	if (mod.zero && mod.just >= 0 && mod.prec == -1)
 	{
@@ -195,7 +195,7 @@ t_ret	print_hexdown(va_list	args, t_mod mod)
 {
 	t_ret		ret;
 	int			neg;
-	long long	nb;
+	unsigned long long	nb;
 
 	if (mod.hh)
 		nb = va_arg(args, unsigned int);
@@ -208,10 +208,10 @@ t_ret	print_hexdown(va_list	args, t_mod mod)
 	else if (mod.j)
 		nb = va_arg(args, uintmax_t);
 	else if (mod.z)
-		nb = va_arg(args, size_t);
+		nb = va_arg(args, unsigned long long);
 	else
 		nb = va_arg(args, unsigned int);
-	ret.str = ft_ltoa_base(nb, 16, 0);
+	ret.str = ft_ultoa_base(nb, 16, 0);
 	prec_int(&ret.str, mod.prec);
 	if (mod.octo)
 		ret.str = ft_strjoin("0x", ret.str);
@@ -227,7 +227,7 @@ t_ret	print_hexup(va_list	args, t_mod mod)
 {
 	t_ret		ret;
 	int			neg;
-	long long	nb;
+	unsigned long long	nb;
 
 	if (mod.hh)
 		nb = va_arg(args, unsigned int);
@@ -240,10 +240,10 @@ t_ret	print_hexup(va_list	args, t_mod mod)
 	else if (mod.j)
 		nb = va_arg(args, uintmax_t);
 	else if (mod.z)
-		nb = va_arg(args, size_t);
+		nb = va_arg(args, unsigned long long);
 	else
 		nb = va_arg(args, unsigned int);
-	ret.str = ft_ltoa_base(nb, 16, 1);
+	ret.str = ft_ultoa_base(nb, 16, 1);
 	prec_int(&ret.str, mod.prec);
 	if (mod.zero && mod.just >= 0 && mod.prec == -1)
 	{

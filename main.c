@@ -2,6 +2,6 @@
 
 int		main(int argc, char **argv)
 {
-	printf("%zu%zu\n", 0, 18446744073709551615);
-	ft_printf("%zu%zu\n", 0, 18446744073709551615);
+	printf("%zu\n", 18446744073709551615);
+	ft_printf("%zu\n", 18446744073709551615);
 }
