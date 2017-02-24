@@ -120,3 +120,16 @@ int 	flag_zero(const char *format, int loc)
 	}
 	return (0);
 }
+
+int 	flag_space(const char *format, int loc)
+{
+	int	i;
+	int	i_max;
+
+	i = loc;
+	i_max = spec_loc(format, loc);
+	while (++i < i_max)
+		if (format[i] == ' ')
+			return (1);
+	return (0);
+}

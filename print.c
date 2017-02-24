@@ -76,6 +76,8 @@ t_ret	print_int(va_list	args, t_mod mod)
 		ret.str = ft_strjoin("+", ret.str);
 	else if (neg)
 		ret.str = ft_strjoin("-", ret.str);
+	else if (mod.space)
+		ret.str = ft_strjoin(" ", ret.str);
 	if (!(mod.zero && mod.just >= 0 && mod.prec == -1))
 		just_str(&ret.str, mod.just, ' ', (mod.just < 0) ? 0 : 1);
 	ret.len = ft_strlen(ret.str);

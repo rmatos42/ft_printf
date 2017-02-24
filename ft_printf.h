@@ -23,6 +23,7 @@ typedef	struct	s_mod
 	int			plus;
 	int			octo;
 	int			zero;
+	int			space;
 }				t_mod;
 
 typedef	struct	s_ret
@@ -44,6 +45,7 @@ int 	flag_z(const char *format, int loc);
 int 	flag_plus(const char *format, int loc);
 int 	flag_octo(const char *format, int loc);
 int 	flag_zero(const char *format, int loc);
+int 	flag_space(const char *format, int loc);
 
 //mod
 t_mod	make_mod(const char *format, int loc);

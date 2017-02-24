@@ -30,5 +30,6 @@ t_mod	make_mod(const char *format, int loc)
 	mod.plus = flag_plus(format, loc);
 	mod.octo = flag_octo(format, loc);
 	mod.zero = flag_zero(format, loc);
+	mod.space = flag_space(format, loc);
 	return (mod);
 }
