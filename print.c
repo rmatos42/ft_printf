@@ -136,11 +136,11 @@ t_ret	print_oct(va_list	args, t_mod mod)
 	if (mod.zero && mod.just >= 0 && mod.prec == -1)
 	{
 		just_str(&ret.str, mod.just, '0', 1);
-		ret.str = (mod.octo) ? ft_strjoin("0", ret.str) : ret.str;
+		ret.str = (mod.octo && nb != 0) ? ft_strjoin("0", ret.str) : ret.str;
 	}
 	if (!(mod.zero && mod.just >= 0 && mod.prec == -1))
 	{
-		ret.str = (mod.octo) ? ft_strjoin("0", ret.str) : ret.str;
+		ret.str = (mod.octo && nb != 0) ? ft_strjoin("0", ret.str) : ret.str;
 		just_str(&ret.str, mod.just, ' ', (mod.just < 0) ? 0 : 1);
 	}
 	ret.len = ft_strlen(ret.str);
