@@ -32,6 +32,5 @@ int		ft_printf(const char *format, ...)
 			i++;
 		}
 	}
-	ft_putchar('\0');
 	return (len);
 }
