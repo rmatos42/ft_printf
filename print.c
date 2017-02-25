@@ -217,12 +217,16 @@ t_ret	print_hexdown(va_list	args, t_mod mod)
 		nb = va_arg(args, unsigned int);
 	ret.str = ft_ultoa_base(nb, 16, 0);
 	prec_int(&ret.str, mod.prec);
-	if (mod.octo)
-		ret.str = ft_strjoin("0x", ret.str);
 	if (mod.zero && mod.just >= 0 && mod.prec == -1)
+	{
 		just_str(&ret.str, mod.just, '0', 1);
+		ret.str = (mod.octo && nb != 0) ? ft_strjoin("0X", ret.str) : ret.str;
+	}
 	else
+	{
+		ret.str = (mod.octo && nb != 0) ? ft_strjoin("0X", ret.str) : ret.str;
 		just_str(&ret.str, mod.just, ' ', (mod.just < 0) ? 0 : 1);
+	}
 	ret.len = ft_strlen(ret.str);
 	return (ret);
 }
@@ -252,11 +256,11 @@ t_ret	print_hexup(va_list	args, t_mod mod)
 	if (mod.zero && mod.just >= 0 && mod.prec == -1)
 	{
 		just_str(&ret.str, mod.just, '0', 1);
-		ret.str = (mod.octo) ? ft_strjoin("0X", ret.str) : ret.str;
+		ret.str = (mod.octo && nb != 0) ? ft_strjoin("0X", ret.str) : ret.str;
 	}
 	else
 	{
-		ret.str = (mod.octo) ? ft_strjoin("0X", ret.str) : ret.str;
+		ret.str = (mod.octo && nb != 0) ? ft_strjoin("0X", ret.str) : ret.str;
 		just_str(&ret.str, mod.just, ' ', (mod.just < 0) ? 0 : 1);
 	}
 	ret.len = ft_strlen(ret.str);

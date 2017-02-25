@@ -2,5 +2,6 @@
 
 int		main(int argc, char **argv)
 {
-	ft_printf("%#o", 0);
+	ft_printf("lalala");
+	// printf("%i:%i\n", gcc, ft);
 }
