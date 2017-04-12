@@ -273,7 +273,7 @@ t_ret	print_char(va_list	args, t_mod mod)
 	char	c;
 
 	if (mod.l)
-		c = va_arg(args, wchar_t);
+		return print_wchar(args, mod);
 	else
 		c = va_arg(args, int);
 	ret.str = ft_memalloc(sizeof(char) * 2);
@@ -286,13 +286,42 @@ t_ret	print_char(va_list	args, t_mod mod)
 	return (ret);
 }
 
+char	*wchar_to_str(wchar_t in)
+{
+	char *str;
+
+	str = malloc(sizeof(char) * 4);
+	if (in <= 0x7F)
+		str[0] = in;
+	else if (in <= 0x7FF)
+	{
+		str[0] = 192 | (((unsigned int)(in) >> 6) & 63);
+		str[1] = 128 | ((unsigned int)(in) & 63);
+	}
+	else if (in <= 0xFFFF)
+	{
+		str[0] = 224 | (((unsigned int)(in) >> 12) & 63);
+		str[1] = 128 | (((unsigned int)(in) >> 6) & 63);
+		str[2] = 128 | ((unsigned int)(in) & 63);
+	}
+	else if (in <= 0x10FFFF)
+	{
+		str[0] = 240 | (((unsigned int)(in) >> 18) & 63);
+		str[1] = 128 | (((unsigned int)(in) >> 12) & 63);
+		str[2] = 128 | (((unsigned int)(in) >> 6) & 63);
+		str[3] = 128 | ((unsigned int)(in) & 63);
+	}
+	str[4] = '\0';
+	return (str);
+}
+
 t_ret	print_wchar(va_list	args, t_mod mod)
 {
 	t_ret ret;
 	wchar_t	w;
 
 	w = va_arg(args, wchar_t);
-	ret.str = "�";
+	ret.str = wchar_to_str(w);
 	ret.len = 1;
 	return (ret);
 }
