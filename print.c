@@ -292,17 +292,22 @@ char	*wchar_to_str(wchar_t in)
 
 	str = malloc(sizeof(char) * 4);
 	if (in <= 0x7F)
+	{
 		str[0] = in;
+		str[1] = '\0';
+	}
 	else if (in <= 0x7FF)
 	{
 		str[0] = 192 | (((unsigned int)(in) >> 6) & 63);
 		str[1] = 128 | ((unsigned int)(in) & 63);
+		str[2] = '\0';
 	}
 	else if (in <= 0xFFFF)
 	{
 		str[0] = 224 | (((unsigned int)(in) >> 12) & 63);
 		str[1] = 128 | (((unsigned int)(in) >> 6) & 63);
 		str[2] = 128 | ((unsigned int)(in) & 63);
+		str[3] = '\0';
 	}
 	else if (in <= 0x10FFFF)
 	{
@@ -310,8 +315,8 @@ char	*wchar_to_str(wchar_t in)
 		str[1] = 128 | (((unsigned int)(in) >> 12) & 63);
 		str[2] = 128 | (((unsigned int)(in) >> 6) & 63);
 		str[3] = 128 | ((unsigned int)(in) & 63);
+		str[4] = '\0';
 	}
-	str[4] = '\0';
 	return (str);
 }
 
@@ -322,7 +327,7 @@ t_ret	print_wchar(va_list	args, t_mod mod)
 
 	w = va_arg(args, wchar_t);
 	ret.str = wchar_to_str(w);
-	ret.len = 1;
+	ret.len = ft_strlen(ret.str);
 	return (ret);
 }
 

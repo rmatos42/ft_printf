@@ -78,6 +78,7 @@ char	*ft_uitoa_base(uintmax_t value, int base, int is_upper);
 int		nb_len(long long value, int base);
 char	*ft_ltoa_base(long long value, int base, int is_upper);
 char	*ft_ultoa_base(unsigned long long value, int base, int is_upper);
+char	*wchar_to_str(wchar_t in);
 
 int		ft_printf(const char *format, ...);
 
