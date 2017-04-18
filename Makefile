@@ -8,7 +8,7 @@ LIB =	ar rc
 
 RLIB =	ranlib
 
-SRCS =	flags.c ft_itoa_base.c ft_printf.c get_just.c get_prec.c just_str.c make_mod.c pad_str.c prec_str.c print_char.c print_hex.c print_oct.c print_percent.c print_ptr.c print_signed.c print_str.c print_unsigned.c print_wide.c spec.c
+SRCS =	ft_itoa_base.c ft_printf.c get_just.c get_prec.c just_str.c make_mod.c pad_str.c prec_str.c print_char.c print_hex.c print_oct.c print_percent.c print_ptr.c print_signed.c print_str.c print_unsigned.c print_wide.c spec.c ft_uitoabase.c flags1.c flags2.c
 
 
 SRCSL =	libft/ft_putchar.c \
