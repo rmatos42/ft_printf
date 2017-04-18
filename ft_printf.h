@@ -63,11 +63,11 @@ t_ret	print_str(va_list	args, t_mod mod);
 t_ret	print_wstr(va_list	args, t_mod mod);
 t_ret	print_ptr(va_list	args, t_mod mod);
 t_ret	print_int(va_list	args, t_mod mod);
-t_ret	print_D(va_list	args, t_mod mod);
+t_ret	print_long(va_list	args, t_mod mod);
 t_ret	print_oct(va_list	args, t_mod mod);
-t_ret	print_O(va_list	args, t_mod mod);
+t_ret	print_longoct(va_list	args, t_mod mod);
 t_ret	print_uint(va_list	args, t_mod mod);
-t_ret	print_U(va_list	args, t_mod mod);
+t_ret	print_ulong(va_list	args, t_mod mod);
 t_ret	print_hexdown(va_list	args, t_mod mod);
 t_ret	print_hexup(va_list	args, t_mod mod);
 t_ret	print_char(va_list	args, t_mod mod);
@@ -82,6 +82,6 @@ char	*wchar_to_str(wchar_t in);
 
 int		ft_printf(const char *format, ...);
 
-static t_ret (*print[])(va_list, t_mod) = {print_str, print_wstr, print_ptr, print_int, print_D, print_int, print_oct, print_O, print_uint, print_U, print_hexdown, print_hexup, print_char, print_wchar};
+static t_ret (*print[])(va_list, t_mod) = {print_str, print_wstr, print_ptr, print_int, print_long, print_int, print_oct, print_longoct, print_uint, print_ulong, print_hexdown, print_hexup, print_char, print_wchar};
 
 #endif

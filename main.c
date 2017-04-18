@@ -1,4 +1,5 @@
 #include "ft_printf.h"
+#include "limits.h"
 
 // #include <stdlib.h>
 
@@ -6,8 +7,8 @@
 int		main(int argc, char **argv)
 {
 	wchar_t w = L'😀';
-	int i = ft_printf("%C\n", w);
-	int x = printf("%s\n", wchar_to_str(w));
-	printf("%i:%i\n", i, x);
+	int i = ft_printf("ft:%jd\n", LLONG_MIN);
+	int x = printf("gcc:%jd\n", LLONG_MIN);
+	printf("%i\n", i);
 	return (0);
 }

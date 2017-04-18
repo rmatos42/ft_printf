@@ -1,6 +1,6 @@
 CC =	gcc
 
-FLAG =	-c  -I libft/
+FLAG =	-c  -I libft/ -I includes
 #-Wall -Wextra -Werror -O2
 NAME =	libftprintf.a
 
@@ -8,7 +8,7 @@ LIB =	ar rc
 
 RLIB =	ranlib
 
-SRCS =	flags.c ft_itoa_base.c ft_printf.c get_just.c get_prec.c just_str.c make_mod.c pad_str.c prec_str.c print.c spec.c
+SRCS =	flags.c ft_itoa_base.c ft_printf.c get_just.c get_prec.c just_str.c make_mod.c pad_str.c prec_str.c print_char.c print_hex.c print_oct.c print_percent.c print_ptr.c print_signed.c print_str.c print_unsigned.c print_wide.c spec.c
 
 
 SRCSL =	libft/ft_putchar.c \
