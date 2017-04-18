@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int 	flag_hh(const char *format, int loc)
+int	flag_hh(const char *format, int loc)
 {
 	int	i;
 	int	i_max;
@@ -13,7 +13,7 @@ int 	flag_hh(const char *format, int loc)
 	return (0);
 }
 
-int 	flag_h(const char *format, int loc)
+int	flag_h(const char *format, int loc)
 {
 	int	i;
 	int	i_max;
@@ -26,7 +26,7 @@ int 	flag_h(const char *format, int loc)
 	return (0);
 }
 
-int 	flag_ll(const char *format, int loc)
+int	flag_ll(const char *format, int loc)
 {
 	int	i;
 	int	i_max;
@@ -39,7 +39,7 @@ int 	flag_ll(const char *format, int loc)
 	return (0);
 }
 
-int 	flag_l(const char *format, int loc)
+int	flag_l(const char *format, int loc)
 {
 	int	i;
 	int	i_max;
@@ -52,7 +52,7 @@ int 	flag_l(const char *format, int loc)
 	return (0);
 }
 
-int 	flag_j(const char *format, int loc)
+int	flag_j(const char *format, int loc)
 {
 	int	i;
 	int	i_max;

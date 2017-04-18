@@ -18,10 +18,10 @@ int		nb_len(long long value, int base)
 
 char	*ft_ltoa_base(long long value, int base, int is_upper)
 {
-	char	*result;
-	char	*buff;
+	char		*result;
+	char		*buff;
 	long long	nb;
-	int		len;
+	int			len;
 
 	if (value == 0)
 		return ("0");

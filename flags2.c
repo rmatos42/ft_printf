@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int 	flag_z(const char *format, int loc)
+int	flag_z(const char *format, int loc)
 {
 	int	i;
 	int	i_max;
@@ -13,7 +13,7 @@ int 	flag_z(const char *format, int loc)
 	return (0);
 }
 
-int 	flag_plus(const char *format, int loc)
+int	flag_plus(const char *format, int loc)
 {
 	int	i;
 	int	i_max;
@@ -26,7 +26,7 @@ int 	flag_plus(const char *format, int loc)
 	return (0);
 }
 
-int 	flag_octo(const char *format, int loc)
+int	flag_octo(const char *format, int loc)
 {
 	int	i;
 	int	i_max;
@@ -39,7 +39,7 @@ int 	flag_octo(const char *format, int loc)
 	return (0);
 }
 
-int 	flag_zero(const char *format, int loc)
+int	flag_zero(const char *format, int loc)
 {
 	int i;
 	int i_max;
@@ -48,7 +48,8 @@ int 	flag_zero(const char *format, int loc)
 	i_max = spec_loc(format, loc);
 	while (++i < i_max)
 	{
-		if (ft_atoi(format + i) && format[i] != '0' && format[i] != ' ' && format[i] != '+')
+		if (ft_atoi(format + i) && format[i] != '0'
+				&& format[i] != ' ' && format[i] != '+')
 			return (0);
 		if (format[i] == '0')
 			return (1);
@@ -56,7 +57,7 @@ int 	flag_zero(const char *format, int loc)
 	return (0);
 }
 
-int 	flag_space(const char *format, int loc)
+int	flag_space(const char *format, int loc)
 {
 	int	i;
 	int	i_max;
