@@ -21,6 +21,8 @@ int		ft_printf(const char *format, ...)
 				ret = print_per(mod);
 			else
 				ret = print[get_spec(format[spec_loc(format, i)])](args, mod);
+			if (ret.str[0] == '\0' && ret.len == 1)
+				ft_putchar('\0');
 			ft_putstr(ret.str);
 			len += ret.len;
 			i = spec_loc(format, i) + 1;

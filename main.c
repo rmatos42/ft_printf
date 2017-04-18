@@ -4,11 +4,8 @@
 // #include <stdlib.h>
 
 #include <stdio.h>
-int		main(int argc, char **argv)
+
+int		main( void )
 {
-	wchar_t w = L'😀';
-	int i = ft_printf("ft:%jd\n", LLONG_MIN);
-	int x = printf("gcc:%jd\n", LLONG_MIN);
-	printf("%i\n", i);
-	return (0);
+	
 }
