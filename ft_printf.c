@@ -21,8 +21,6 @@ int		ft_printf(const char *format, ...)
 {
 	int		i;
 	int		len;
-	char	*str;
-	t_mod	mod;
 	t_ret	ret;
 	va_list	args;
 
@@ -31,7 +29,6 @@ int		ft_printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
-		mod = make_mod(format, i);
 		if (format[i] == '%')
 		{
 			ret = handle_spec(format, i, args);

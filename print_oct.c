@@ -3,7 +3,6 @@
 t_ret	print_oct(va_list	args, t_mod mod)
 {
 	t_ret		ret;
-	int			neg;
 	unsigned long long	nb;
 
 	if (mod.hh)

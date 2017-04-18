@@ -3,7 +3,6 @@
 t_ret	print_hexdown(va_list	args, t_mod mod)
 {
 	t_ret		ret;
-	int			neg;
 	unsigned long long	nb;
 
 	if (mod.hh)
@@ -39,7 +38,6 @@ t_ret	print_hexdown(va_list	args, t_mod mod)
 t_ret	print_hexup(va_list	args, t_mod mod)
 {
 	t_ret		ret;
-	int			neg;
 	unsigned long long	nb;
 
 	if (mod.hh)
