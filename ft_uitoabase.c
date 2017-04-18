@@ -1,4 +1,4 @@
-#include  "ft_printf.h"
+#include "ft_printf.h"
 
 int		uint_len(uintmax_t value, int base)
 {
@@ -22,7 +22,7 @@ char	*ft_uitoa_base(uintmax_t value, int base, int is_upper)
 	if (value == 0)
 		return ("0");
 	len = uint_len(value, base);
-	result	= ft_strnew(len);
+	result = ft_strnew(len);
 	buff = is_upper ? "0123456789ABCDEF" : "0123456789abcdef";
 	while (len--)
 	{

@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int 	get_spec(char c)
+int	get_spec(char c)
 {
 	int i;
 
@@ -11,7 +11,7 @@ int 	get_spec(char c)
 	return (-1);
 }
 
-int 	spec_loc(const char *format, int loc)
+int	spec_loc(const char *format, int loc)
 {
 	if (format[loc] != '%')
 		return (-1);

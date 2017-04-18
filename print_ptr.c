@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-t_ret	print_ptr(va_list	args, t_mod mod)
+t_ret	print_ptr(va_list args, t_mod mod)
 {
 	t_ret		ret;
 	uintmax_t	addr;

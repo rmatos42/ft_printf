@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void 	print_mod(t_mod mod)
+void	print_mod(t_mod mod)
 {
 	printf("mod.just:	%i\n", mod.just);
 	printf("mod.prec:	%i\n", mod.prec);

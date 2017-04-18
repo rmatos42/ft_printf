@@ -4,5 +4,5 @@
 
 int		main( void )
 {
-	ft_printf("%s\n", "test");
+	ft_printf("%20s\n", "test");
 }

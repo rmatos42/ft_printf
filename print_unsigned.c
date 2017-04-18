@@ -5,22 +5,22 @@ unsigned long long	get_uint(va_list args, t_mod mod)
 	if (mod.hh)
 		return (va_arg(args, unsigned int));
 	else if (mod.h)
-		return va_arg(args, unsigned int);
+		return (va_arg(args, unsigned int));
 	else if (mod.l)
-		return va_arg(args, unsigned long int);
+		return (va_arg(args, unsigned long int));
 	else if (mod.ll)
-		return va_arg(args, unsigned long long int);
+		return (va_arg(args, unsigned long long int));
 	else if (mod.j)
-		return va_arg(args, uintmax_t);
+		return (va_arg(args, uintmax_t));
 	else if (mod.z)
-		return va_arg(args, unsigned long long);
+		return (va_arg(args, unsigned long long));
 	else
-		return va_arg(args, unsigned int);
+		return (va_arg(args, unsigned int));
 }
 
-t_ret	print_uint(va_list	args, t_mod mod)
+t_ret				print_uint(va_list args, t_mod mod)
 {
-	t_ret		ret;
+	t_ret				ret;
 	unsigned long long	nb;
 
 	nb = get_uint(args, mod);
@@ -34,9 +34,9 @@ t_ret	print_uint(va_list	args, t_mod mod)
 	return (ret);
 }
 
-t_ret	print_ulong(va_list	args, t_mod mod)
+t_ret				print_ulong(va_list args, t_mod mod)
 {
-	t_ret		ret;
+	t_ret				ret;
 	unsigned long long	nb;
 
 	nb = va_arg(args, unsigned long long);

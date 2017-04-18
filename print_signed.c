@@ -3,22 +3,22 @@
 long long	get_int(va_list args, t_mod mod)
 {
 	if (mod.hh)
-		return va_arg(args, int);
+		return (va_arg(args, int));
 	else if (mod.h)
-		return va_arg(args, int);
+		return (va_arg(args, int));
 	else if (mod.l)
-		return va_arg(args, long int);
+		return (va_arg(args, long int));
 	else if (mod.ll)
-		return va_arg(args, long long int);
+		return (va_arg(args, long long int));
 	else if (mod.j)
-		return va_arg(args, long long int);
+		return (va_arg(args, long long int));
 	else if (mod.z)
-		return va_arg(args, size_t);
+		return (va_arg(args, size_t));
 	else
-		return va_arg(args, int);
+		return (va_arg(args, int));
 }
 
-t_ret	print_int(va_list	args, t_mod mod)
+t_ret		print_int(va_list args, t_mod mod)
 {
 	t_ret		ret;
 	int			neg;
@@ -47,7 +47,7 @@ t_ret	print_int(va_list	args, t_mod mod)
 	return (ret);
 }
 
-t_ret	print_long(va_list	args, t_mod mod)
+t_ret		print_long(va_list args, t_mod mod)
 {
 	t_ret		ret;
 	int			neg;
