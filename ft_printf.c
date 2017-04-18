@@ -1,5 +1,22 @@
 #include "ft_printf.h"
 
+t_ret	handle_spec(const char *format, int i, va_list args)
+{
+	t_mod mod;
+	t_ret ret;
+
+
+	mod = make_mod(format, i);
+	if (format[spec_loc(format, i)] == '%')
+		ret = print_per(mod);
+	else
+		ret = print[get_spec(format[spec_loc(format, i)])](args, mod);
+	if (ret.str[0] == '\0' && ret.len == 1)
+		ft_putchar('\0');
+	ft_putstr(ret.str);
+	return ret;
+}
+
 int		ft_printf(const char *format, ...)
 {
 	int		i;
@@ -17,13 +34,7 @@ int		ft_printf(const char *format, ...)
 		mod = make_mod(format, i);
 		if (format[i] == '%')
 		{
-			if (format[spec_loc(format, i)] == '%')
-				ret = print_per(mod);
-			else
-				ret = print[get_spec(format[spec_loc(format, i)])](args, mod);
-			if (ret.str[0] == '\0' && ret.len == 1)
-				ft_putchar('\0');
-			ft_putstr(ret.str);
+			ret = handle_spec(format, i, args);
 			len += ret.len;
 			i = spec_loc(format, i) + 1;
 		}
